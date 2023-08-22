@@ -18,7 +18,7 @@ export default async function getDatabase(twitter) {
     .select("*")
     .eq("to", twitter);
 
-  if (error) throw new Error(error);
+  if (error) return [];
 
   console.log("getDatabase", data);
   return data;

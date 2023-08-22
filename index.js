@@ -17,16 +17,17 @@ async function handleLogs(logs) {
   for (let log of logs) {
     // get trader past trades
     const trades = await getTrades(log.args.trader);
-
     // if traded before, skip
-    if (trades.length > 0) continue;
+    if (trades.length > 0) continue; 
 
     // get friend
     const friend = await getFriend(log.args.trader);
+    // if no friends, skip
     if (!friend) continue;
 
     // get rows from databae
     const rows = await getDatabase(friend.twitterUsername);
+    // if no rows, skip
     if (rows.length === 0) continue;
 
     // send email

@@ -31,7 +31,7 @@ async function handleLogs(logs) {
 
     // send email
     for (let row of rows) {
-      sendEmail(row.email, row.from, row.to);
+      sendEmail(row.email, rows.twitterUsername);
     }
   }
 }

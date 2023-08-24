@@ -22,7 +22,8 @@ export default async function addFriend(_twitterUsername) {
       });
       // clear friends.txt
       fs.writeFileSync(path, "---");
-    } catch {
+    } catch (error) {
+      console.log("addFriend error:", error);
       return false;
     }
   }

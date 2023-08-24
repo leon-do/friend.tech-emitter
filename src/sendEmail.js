@@ -11,7 +11,8 @@ export default async function sendEmail(_email, _twitterUsername) {
       subject: "Friend.Tech Alert",
       html: `<div>@${_twitterUsername} has just signed up to friend.tech </div>`,
     });
-  } catch {
+  } catch (error) {
+    console.log("sendEmail error:", error);
     return false;
   }
 }

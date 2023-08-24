@@ -5,7 +5,10 @@ export default async function getFriend(address) {
   const friend = await axios
     .get(`https://prod-api.kosetto.com/users/${address}`)
     .then((res) => res.data)
-    .catch(() => null);
+    .catch((error) => {
+      console.log("getFriend error:", error);
+      return null;
+    });
 
   return friend;
 }

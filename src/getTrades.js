@@ -12,6 +12,6 @@ export default async function getTrades(address) {
         }`,
     })
     .then((res) => res.data.data.trades)
-    .catch(() => null);
+    .catch(() => []);
   return trades;
 }

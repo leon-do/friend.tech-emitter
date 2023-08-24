@@ -6,5 +6,7 @@ export default async function getFriend(address) {
     .get(`https://prod-api.kosetto.com/users/${address}`)
     .then((res) => res.data)
     .catch(() => null);
+
+  console.log("getFriend", friend);
   return friend;
 }

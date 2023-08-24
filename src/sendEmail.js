@@ -2,7 +2,7 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND);
 
-// sendEmail("vietnow1591@gmail.com", "Viet", "Duc");
+// sendEmail("from@gmail.com", "Viet", "Duc");
 export default async function sendEmail(_email, _twitterUsername) {
   try {
     await resend.emails.send({

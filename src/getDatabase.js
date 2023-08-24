@@ -11,12 +11,12 @@ const supabase = createClient(
   }
 );
 
-// getDatabase("doe");
-export default async function getDatabase(twitter) {
+// getDatabase("elonmusk");
+export default async function getDatabase(_twitterUsername) {
   const { data, error } = await supabase
     .from("friends")
     .select("*")
-    .eq("to", twitter);
+    .eq("to", _twitterUsername);
 
   if (error) return [];
 

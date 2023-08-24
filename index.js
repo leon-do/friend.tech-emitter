@@ -33,8 +33,8 @@ async function handleLogs(logs) {
 
     // send email
     for (let row of rows) {
-      sendEmail(row.email, rows.twitterUsername);
-      sendTweet(row.twitterUsername);
+      sendEmail(row.email, rows.from);
+      sendTweet(row.to);
     }
   }
 }

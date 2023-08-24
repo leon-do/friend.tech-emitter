@@ -11,7 +11,7 @@ export default async function addFriend(_twitterUsername) {
   // read friends.txt
   const friends = fs.readFileSync(path, "utf8");
   // if list is long enough
-  if (friends.split("\n").length > 300) {
+  if (friends.split("\n").length > 333) {
     try {
       // send email
       await resend.emails.send({

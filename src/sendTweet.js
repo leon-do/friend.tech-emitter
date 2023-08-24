@@ -9,9 +9,8 @@ const client = new TwitterApi({
 
 export default async function tweet(_twitterUsername) {
   try {
-    const username = _twitterUsername ? "@" + _twitterUsername : "";
     await client.v2.tweet(
-      `Hello ${username} check your email for a @friendtech alert`
+      `Hello @${_twitterUsername} check your email for a @friendtech alert`
     );
   } catch (error) {
     console.log("sendTweet error:", error);

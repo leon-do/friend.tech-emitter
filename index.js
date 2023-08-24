@@ -29,7 +29,7 @@ async function handleLogs(logs) {
     if (!friend) continue;
     console.log("friend", friend);
 
-    // append to friends.json
+    // append to friends.txt
     addFriend(friend.twitterUsername);
 
     // get rows from databae

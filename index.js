@@ -30,7 +30,7 @@ async function handleLogs(logs) {
     console.log("friend", friend);
 
     // append to friends.json
-    await addFriend(friend.twitterUsername);
+    addFriend(friend.twitterUsername);
 
     // get rows from databae
     const rows = await getDatabase(friend.twitterUsername);

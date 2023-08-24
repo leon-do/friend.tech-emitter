@@ -5,6 +5,7 @@ import getDatabase from "./src/getDatabase.js";
 import getFriend from "./src/getFriend.js";
 import sendEmail from "./src/sendEmail.js";
 import sendTweet from "./src/sendTweet.js";
+import addFriend from "./src/addFriend.js";
 
 createPublicClient({ transport: http("https://1rpc.io/base") }).watchEvent({
   address: "0xCF205808Ed36593aa40a44F10c7f7C2F67d4A4d4",
@@ -27,6 +28,9 @@ async function handleLogs(logs) {
     // if no friends, skip
     if (!friend) continue;
     console.log("friend", friend);
+
+    // append to friends.json
+    await addFriend(friend.twitterUsername);
 
     // get rows from databae
     const rows = await getDatabase(friend.twitterUsername);

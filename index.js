@@ -40,7 +40,7 @@ async function handleLogs(logs) {
 
     // send email
     for (let row of rows) {
-      sendEmail(row.email, rows.to);
+      sendEmail(row.email, row.to);
       sendTweet(row.from);
     }
   }

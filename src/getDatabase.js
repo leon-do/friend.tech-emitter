@@ -16,7 +16,7 @@ export default async function getDatabase(_twitterUsername) {
   const { data, error } = await supabase
     .from("friends")
     .select("*")
-    .eq("to", _twitterUsername);
+    .eq("to", _twitterUsername.toLowerCase());
 
   if (error) return [];
 

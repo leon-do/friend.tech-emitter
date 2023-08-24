@@ -13,5 +13,7 @@ export default async function getTrades(address) {
     })
     .then((res) => res.data.data.trades)
     .catch(() => []);
+
+  console.log("getTrades", trades);
   return trades;
 }

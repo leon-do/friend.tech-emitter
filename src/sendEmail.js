@@ -2,11 +2,11 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND);
 
-// sendEmail("from@gmail.com", "Viet", "Duc");
+// sendEmail("d333z333@gmail.com", "0xD33z");
 export default async function sendEmail(_email, _twitterUsername) {
   try {
     await resend.emails.send({
-      from: "Friend.Tech Alerts <onboarding@resend.dev>",
+      from: "Friend.Tech Alerts <info@mail.bipsea.xyz>",
       to: _email,
       subject: "Friend.Tech Alert",
       html: `<div>Hello</div> <div> ${_twitterUsername} has just signed up to friend.tech </div>`,

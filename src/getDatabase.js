@@ -20,6 +20,5 @@ export default async function getDatabase(_twitterUsername) {
 
   if (error) return [];
 
-  console.log("getDatabase", data);
   return data;
 }

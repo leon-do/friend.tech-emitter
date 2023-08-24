@@ -7,6 +7,5 @@ export default async function getFriend(address) {
     .then((res) => res.data)
     .catch(() => null);
 
-  console.log("getFriend", friend);
   return friend;
 }

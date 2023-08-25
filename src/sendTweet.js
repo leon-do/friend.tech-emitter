@@ -13,7 +13,7 @@ export default async function tweet(_twitterUsername) {
       `Hello @${_twitterUsername} check your email for a @friendtech alert`
     );
   } catch (error) {
-    console.log("sendTweet error:", error);
+    console.log("sendTweet-error:", error);
     return false;
   }
 }

@@ -12,7 +12,7 @@ export default async function sendEmail(_email, _twitterUsername) {
       html: `<div>@${_twitterUsername} has just signed up to friend.tech </div>`,
     });
   } catch (error) {
-    console.log("sendEmail error:", error);
+    console.log("sendEmail-error:", error);
     return false;
   }
 }

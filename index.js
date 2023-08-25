@@ -7,12 +7,13 @@ import sendEmail from "./src/sendEmail.js";
 import sendTweet from "./src/sendTweet.js";
 import addFriend from "./src/addFriend.js";
 
-createPublicClient({ transport: http("https://1rpc.io/base") }).watchEvent({
+createPublicClient({ transport: http("https://base.meowrpc.com") }).watchEvent({
   address: "0xCF205808Ed36593aa40a44F10c7f7C2F67d4A4d4",
   event: parseAbiItem(
     "event Trade(address trader, address subject, bool isBuy, uint256 shareAmount, uint256 ethAmount, uint256 protocolEthAmount, uint256 subjectEthAmount, uint256 supply)"
   ),
   onLogs: (logs) => handleLogs(logs),
+  onError: (error) => console.log("viem-error: ", error),
 });
 
 async function handleLogs(logs) {

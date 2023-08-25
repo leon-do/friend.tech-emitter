@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { createPublicClient, http, parseAbiItem } from "viem";
-import getTrades from "./src/getTrades.js";
+import isNewFriend from "./src/isNewFriend.js";
 import getDatabase from "./src/getDatabase.js";
 import getFriend from "./src/getFriend.js";
 import sendEmail from "./src/sendEmail.js";
@@ -19,10 +19,8 @@ createPublicClient({ transport: http("https://base.meowrpc.com") }).watchEvent({
 async function handleLogs(logs) {
   for (let log of logs) {
     // get trader past trades
-    const trades = await getTrades(log.args.trader);
-    // if traded before, skip
-    if (trades.length > 0) continue;
-    console.log("trades", trades);
+    if (!isNewFriend(log.args)) continue;
+    console.log("log", log);
 
     // get friend
     const friend = await getFriend(log.args.trader);
